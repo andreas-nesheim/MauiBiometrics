@@ -1,4 +1,7 @@
-﻿namespace MauiBiometrics;
+﻿using Plugin.Fingerprint.Abstractions;
+using Plugin.Fingerprint;
+
+namespace MauiBiometrics;
 
 public partial class MainPage : ContentPage
 {
@@ -9,12 +12,18 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	private async void OnCounterClicked(object sender, EventArgs e)
 	{
-		count++;
-		CounterLabel.Text = $"Current count: {count}";
-
-		SemanticScreenReader.Announce(CounterLabel.Text);
+		var request = new AuthenticationRequestConfiguration("Prove you have fingers!", "Because without it you can't have access");
+		var result = await CrossFingerprint.Current.AuthenticateAsync(request);
+		if (result.Authenticated)
+		{
+			// do secret stuff :)
+		}
+		else
+		{
+			// not allowed to do secret stuff :(
+		}
 	}
 }
 
