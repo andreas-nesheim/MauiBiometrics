@@ -5,8 +5,6 @@ namespace MauiBiometrics;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
@@ -18,11 +16,11 @@ public partial class MainPage : ContentPage
 		var result = await CrossFingerprint.Current.AuthenticateAsync(request);
 		if (result.Authenticated)
 		{
-			// do secret stuff :)
+			await DisplayAlert("Authenticated!", "Access granted", "Cool beans");
 		}
 		else
 		{
-			// not allowed to do secret stuff :(
+			await DisplayAlert("Not authenticated!", "Access denied", "aww");
 		}
 	}
 }
