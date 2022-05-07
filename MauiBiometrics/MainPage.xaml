@@ -1,44 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiBiometrics.MainPage">
+<ContentPage
+    x:Class="MauiBiometrics.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ScrollView>
-        <VerticalStackLayout Spacing="25" Padding="30">
+        <VerticalStackLayout Padding="30" Spacing="25">
 
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
+            <Label
                 FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
+                HorizontalOptions="Center"
                 SemanticProperties.HeadingLevel="Level1"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+                Text="Halt!" />
 
-            <Label 
-                Text="Current count: 0"
+            <Label
                 FontSize="18"
-                FontAttributes="Bold"
-                x:Name="CounterLabel"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"
+                Text="Identify yourself" />
 
-            <Button 
-                Text="Click me"
-                FontAttributes="Bold"
-                SemanticProperties.Hint="Counts the number of times you click"
+            <Button
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Authenticate" />
 
             <Image
-                Source="dotnet_bot.png"
+                HeightRequest="340"
+                HorizontalOptions="Center"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                WidthRequest="250"
-                HeightRequest="310"
-                HorizontalOptions="Center" />
+                Source="sec_dotnet_bot.png"
+                WidthRequest="340" />
 
         </VerticalStackLayout>
     </ScrollView>
